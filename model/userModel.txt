@@ -1,0 +1,112 @@
+import mongoose from "mongoose"
+import bcrypt from "bcryptjs"
+
+
+const userSchema = mongoose.Schema({
+    name:{
+        type:String,
+        required:true,
+        trim:true,
+    },
+    email:{
+        type:String,
+        unique:true,
+    },
+    password:{
+        type:String,
+        required:true,
+        accountVerified:{type:Boolean,default:false},
+        verificationCode:Number
+        verificationCodeExpire:Date,
+        resetPasswordToken:String,
+        resetPasswordTokenExpire:Date,
+        resetPasswordVerificationCode:{
+            type:Boolean,
+            createdAt:{
+                type:Date,
+                default:false
+            }
+        }
+    }
+})
+
+
+userSchema.pre("save",async function(next){
+    if(!this.isModified("password") next())
+
+})    const this.password = await bcrypt.hash("password",10)
+
+
+userSchema.methods.compare = async function(enteredpassword){
+    return await brcypt.compare(enteredpassword,this.password)
+}
+
+
+export consrt User = mongoose.model("User",userSchema)
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+import mongoose from "mongoose"
+
+
+const userSchema  = new mongoose.Schema({
+    email:{
+        type:String,
+        unique:true,
+        required:true
+    },
+    name:{
+        type:String,
+        required:true
+    },
+    password:{
+        type:String,
+        required:true
+    },
+    accountVerified:{
+        default:false,
+        type:String
+    },
+    verificationCode:{
+        type:Number,
+    },
+    verificationCodeExpire:{
+        type:Date
+    },
+    resetPasswordToken:{
+        type:String
+    },
+    resetPasswordTokenExpire:{
+        type:Date
+    },
+    resetPasswordVerificationCode:{
+       type:Boolean,
+       default:false
+    }
+
+
+
+
+userSchema.pre("save",async function(next){
+    if(!this.isModified(Password)) return next();
+    this.password  = await bcrypt.hash("password",10)
+    next(); 
+})
+
+
+userSchema.methods.comparePasswords = async function(enteredpassword){
+     const res = await bcrypt.compare(enteredpassword,password)
+     return res
+}
+
+
+
+
+
+
+})
