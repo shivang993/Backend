@@ -50,7 +50,8 @@ export const register = async (req, res, next) => {
 
     // ✅ Hash password
    // const hashedPassword = await bcrypt.hash(password, 10);
-console.log('from user', password);
+
+  
     // ✅ Create new user
     const newUser = new User({
       name,
