@@ -11,11 +11,7 @@
 
 ## 🧩 Installation & Setup
 
-### 1️⃣ Clone the repository
-
-git clone https://github.com/yourusername/your-repo-name.git
-cd your-repo-name
-2️⃣ Install dependencies
+### 1️⃣ Install dependencies
 
 npm install
 npm install express mongoose cors
@@ -35,6 +31,4 @@ If not already added, you can include this inside your package.json:
   "dev": "nodemon server.js"
 }
 
-Then run your project in development mode with:
 
-npm run dev 
