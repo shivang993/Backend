@@ -24,18 +24,17 @@ The second ensures express, mongoose, and cors are installed in case they weren�
 
 🚀 Run the Server
 
-npm run dve
+npm run dev
 (If you meant npm run dev, make sure your package.json includes that script. Example below.)
 
 🧠 Example package.json Scripts Section
 If not already added, you can include this inside your package.json:
 
-json
-Copy code
 "scripts": {
   "start": "node server.js",
   "dve": "nodemon server.js"
 }
+
 Then run your project in development mode with:
 
 npm run dev 
