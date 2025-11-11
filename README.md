@@ -32,7 +32,7 @@ If not already added, you can include this inside your package.json:
 
 "scripts": {
   "start": "node server.js",
-  "dve": "nodemon server.js"
+  "dev": "nodemon server.js"
 }
 
 Then run your project in development mode with:
