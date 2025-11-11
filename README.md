@@ -13,10 +13,13 @@
 
 ### 1️⃣ Install dependencies
 
-npm install
-npm install express mongoose cors
-The first command installs project dependencies from package.json.
-The second ensures express, mongoose, and cors are installed in case they weren’t already listed.
+- ⚙️ npm install 
+
+- ⚙️ npm install express mongoose cors
+  
+• The first command installs project dependencies from package.json.  
+• The second ensures express, mongoose, and cors are installed in case they weren’t already listed.
+
 
 🚀 Run the Server
 
